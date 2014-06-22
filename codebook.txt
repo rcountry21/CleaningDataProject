@@ -1,0 +1,144 @@
+Code book
+Ryan Countryman
+Getting and Cleaning Data
+June 22 2014
+
+Col 1
+	Subject
+		Subject Code
+		1..30  Unique identifier for subjects in the study
+	
+Col 2
+
+	ActivityName
+		Activity that was performed at the time data points were collected
+		1 WALKING
+		2 WALKING_UPSTAIRS
+		3 WALKING_DOWNSTAIRS
+		4 SITTING
+		5 STANDING
+		6 LAYING
+
+
+Col 3..68
+	The following columns are the AVERAGE of data points taken during the experiment.
+	It should also be noted this is the combination of the training data and the test data, this data set does NOT discern between them.
+		
+		
+	tBodyAcc-mean()-X
+	tBodyAcc-mean()-Y
+	tBodyAcc-mean()-Z
+		Mean of time domain Body acceleromter values, dir X, Y, Z
+
+	tBodyAcc-std()-X
+	tBodyAcc-std()-Y
+	tBodyAcc-std()-Z
+		Standard deviation of time domain Body acceleromter values, dir X, Y, Z
+
+	tGravityAcc-mean()-X
+	tGravityAcc-mean()-Y
+	tGravityAcc-mean()-Z
+		Mean of time domain Gravity acceleromter values, dir X, Y, Z
+
+	tGravityAcc-std()-X
+	tGravityAcc-std()-Y
+	tGravityAcc-std()-Z
+		Standard deviation of time domain Gravity acceleromter values, dir X, Y, Z
+		
+	tBodyAccJerk-mean()-X
+	tBodyAccJerk-mean()-Y
+	tBodyAccJerk-mean()-Z
+		Mean of time domain Body acceleromter calculated Jerk values, dir X, Y, Z
+
+	tBodyAccJerk-std()-X
+	tBodyAccJerk-std()-Y
+	tBodyAccJerk-std()-Z
+		Standard deviation of time domain Body acceleromter calculated Jerk values, dir X, Y, Z
+
+	tBodyGyro-mean()-X
+	tBodyGyro-mean()-Y
+	tBodyGyro-mean()-Z
+		Mean of time domain Body gyroscope values, dir X, Y, Z
+
+	tBodyGyro-std()-X
+	tBodyGyro-std()-Y
+	tBodyGyro-std()-Z
+		Standard deviation of time domain Body gyroscope values, dir X, Y, Z
+
+	tBodyGyroJerk-mean()-X
+	tBodyGyroJerk-mean()-Y
+	tBodyGyroJerk-mean()-Z
+		Mean of time domain Body gyroscope calculated Jerk values, dir X, Y, Z
+
+	tBodyGyroJerk-std()-X
+	tBodyGyroJerk-std()-Y
+	tBodyGyroJerk-std()-Z
+		Standard deviation of time domain Body gyroscope calculated Jerk values, dir X, Y, Z
+
+	tBodyAccMag-mean()
+		Mean of time domain Body accelerometer calculated magnitude
+	tBodyAccMag-std()
+		Standard deviation of time domain Body accelerometer calculated magnitude
+	tGravityAccMag-mean()
+		Mean of time domain Gravity accelerometer calculated magnitude
+	tGravityAccMag-std()
+		Standard deviation of time domain Gravity accelerometer calculated magnitude
+	tBodyAccJerkMag-mean()
+		Mean of time domain Body accelerometer calculated Jerk motion magnitude
+	tBodyAccJerkMag-std()
+		Standard deviation of time domain Body accelerometer calculated Jerk motion magnitude
+	tBodyGyroMag-mean()
+		Mean of time domain Body gyroscope calculated magnitude
+	tBodyGyroMag-std()
+		Standard deviation of time domain Body gyroscope calculated magnitude
+	tBodyGyroJerkMag-mean()
+		Mean of time domain Body gyroscope calculated Jerk motion magnitude
+	tBodyGyroJerkMag-std()
+		Standard deviation of time domain Body gyroscope calculated Jerk motion magnitude
+
+	fBodyAcc-mean()-X
+	fBodyAcc-mean()-Y
+	fBodyAcc-mean()-Z
+		Mean of frequency domain Body acceleromter values, dir X, Y, Z
+
+	fBodyAcc-std()-X
+	fBodyAcc-std()-Y
+	fBodyAcc-std()-Z
+		Standard deviation of frequency domain Body acceleromter values, dir X, Y, Z
+
+	fBodyAccJerk-mean()-X
+	fBodyAccJerk-mean()-Y
+	fBodyAccJerk-mean()-Z
+		Mean of frequency domain Body acceleromter calculated Jerk values, dir X, Y, Z
+
+	fBodyAccJerk-std()-X
+	fBodyAccJerk-std()-Y
+	fBodyAccJerk-std()-Z
+		Standard deviation of frequency domain Body acceleromter calculated Jerk values, dir X, Y, Z
+
+	fBodyGyro-mean()-X
+	fBodyGyro-mean()-Y
+	fBodyGyro-mean()-Z
+		Mean of frequency domain Body gyroscope values, dir X, Y, Z
+
+	fBodyGyro-std()-X
+	fBodyGyro-std()-Y
+	fBodyGyro-std()-Z
+		Standard deviation of frequency domain Body gyroscope values, dir X, Y, Z
+
+	fBodyAccMag-mean()
+		Mean of frequency domain Body accelerometer calculated magnitude
+	fBodyAccMag-std()
+		Standard deviation of frequency domain Body accelerometer calculated magnitude
+	fBodyBodyAccJerkMag-mean()
+		Mean of frequency domain Gravity accelerometer calculated magnitude
+	fBodyBodyAccJerkMag-std()
+		Standard deviation of frequency domain Gravity accelerometer calculated magnitude
+	fBodyBodyGyroMag-mean()
+		Mean of frequency domain Body gyroscope calculated magnitude
+	fBodyBodyGyroMag-std()
+		Standard deviation of frequency domain Body gyroscope calculated magnitude
+	fBodyBodyGyroJerkMag-mean()
+		Mean of frequency domain Body gyroscope calculated Jerk motion magnitude
+	fBodyBodyGyroJerkMag-std()
+		Standard deviation of frequency domain Body gyroscope calculated Jerk motion magnitude
