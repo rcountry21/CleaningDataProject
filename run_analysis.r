@@ -1,42 +1,42 @@
-# require(sqldf)
-# require(reshape2)
-# require(plyr)
+require(sqldf)
+require(reshape2)
+require(plyr)
 
-# train_x <- read.table("train/X_train.txt")
-# subject_train = read.table("train/subject_train.txt")
-# train_y <- read.table("train/Y_train.txt")
-# 
-# test_x <- read.table("test/X_test.txt")
-# subject_test = read.table("test/subject_test.txt")
-# test_y <- read.table("test/Y_test.txt")
-# 
-# featuresDF <- read.table("features.txt")
-# activityDF <- read.table("activity_labels.txt")
-# 
-# # Step 1
-# dfTrain <- train_x
-# colnames <- as.vector(featuresDF[,2])
-# colnames(dfTrain) <- colnames
-# dfTrain$Activity <- as.vector(train_y)
-# dfTrain[,"Activity"] <- as.vector(train_y)
-# 
-# dfTrain$Subject <- as.vector(subject_train)
-# dfTrain[,"Subject"] <- as.vector(subject_train)
-# 
-# 
-# dfTest <- test_x
-# colnames <- as.vector(featuresDF[,2])
-# colnames(dfTest) <- colnames
-# 
-# dfTest$Activity <- as.vector(test_y)
-# dfTest[,"Activity"] <- as.vector(test_y)
-# 
-# dfTest$Subject <- as.vector(subject_test)
-# dfTest[,"Subject"] <- as.vector(subject_test)
-# 
-# dfTotal <- rbind(dfTrain, dfTest)
+train_x <- read.table("train/X_train.txt")
+subject_train = read.table("train/subject_train.txt")
+train_y <- read.table("train/Y_train.txt")
 
-#activityDF["ActivityName"] <- activityDF$V2
+test_x <- read.table("test/X_test.txt")
+subject_test = read.table("test/subject_test.txt")
+test_y <- read.table("test/Y_test.txt")
+
+featuresDF <- read.table("features.txt")
+activityDF <- read.table("activity_labels.txt")
+
+# Step 1
+dfTrain <- train_x
+colnames <- as.vector(featuresDF[,2])
+colnames(dfTrain) <- colnames
+dfTrain$Activity <- as.vector(train_y)
+dfTrain[,"Activity"] <- as.vector(train_y)
+
+dfTrain$Subject <- as.vector(subject_train)
+dfTrain[,"Subject"] <- as.vector(subject_train)
+
+
+dfTest <- test_x
+colnames <- as.vector(featuresDF[,2])
+colnames(dfTest) <- colnames
+
+dfTest$Activity <- as.vector(test_y)
+dfTest[,"Activity"] <- as.vector(test_y)
+
+dfTest$Subject <- as.vector(subject_test)
+dfTest[,"Subject"] <- as.vector(subject_test)
+
+dfTotal <- rbind(dfTrain, dfTest)
+
+activityDF["ActivityName"] <- activityDF$V2
 
 # Step 2
 # Use SQL DF to pull out the column names we want
@@ -63,5 +63,4 @@ dfMeasMelt <- melt(dfMeasMerge, id=c("Subject", "ActivityName"), measure.vars = 
 dfFinal <- ddply(dfMeasMelt, .(Subject, ActivityName, variable), summarize, avg=mean(value))
 dfFinalCast <- dcast(dfFinal, Subject + ActivityName ~ variable, value.var="avg")
 
-write.csv(dfFinal, 'SamsungData.csv')
-
+write.table(dfFinalCast,file="SamsungData.txt", sep="\t")
